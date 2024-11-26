@@ -4,6 +4,7 @@
     "slug": "travel-app",
     "version": "1.0.0",
     "orientation": "portrait",
+    "scheme": "myapp",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
@@ -18,10 +19,35 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.vanduy41.travelapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "plugin": [
+      [
+        "@rnmapbox/maps",
+        {
+          "RNMapboxMapsDownloadToken": "sk.eyJ1IjoidmFuZHV5NDEiLCJhIjoiY20zc3BzYmNlMDBhdzJrcGRydnNrM3gzbSJ9.vAegKKR6imT74Q6ahDsVNg"
+        }
+      ]
+    ],
+    "plugins": [
+      "expo-router",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "usesCleartextTraffic": true
+          }
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "b00c31d0-9de8-452e-a506-556b550f646a"
+      }
     }
   }
 }
