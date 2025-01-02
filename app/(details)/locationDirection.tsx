@@ -40,7 +40,7 @@ const LocationDirection = () => {
 
     useEffect(() => {
         const routes = data?.routes[0];
-        console.log(routes.legs[0])
+        console.log(routes?.legs[0])
         const maneuverArray = routes?.legs[0]?.steps.map((steps: any) => {
             return {
                 type: steps.maneuver.type,
@@ -76,12 +76,10 @@ const LocationDirection = () => {
                 points={points}
                 isfolowUser={isfolowUser}
                 setIsFolowUser={setIsFolowUser}
-
             />
 
             <View
                 className={`absolute top-14 left-5 right-5 bg-black rounded-lg`}
-
             >
                 <View className='py-6 px-4'>
 
@@ -101,11 +99,13 @@ const LocationDirection = () => {
             >
                 <FontAwesome name="circle-o" size={24} color="white" />
             </TouchableOpacity>
+
             <TouchableOpacity
-                className='p-[10] absolute left-[10] top-[60%] bg-black rounded-full'
+                className='p-[10] absolute left-[10] top-[60%] bg-black rounded-full flex-row items-center'
                 onPress={() => setIsFolowUser(true)}
             >
-                <FontAwesome name="circle-o" size={24} color="white" />
+                <FontAwesome name="angle-double-down" size={24} color="white" />
+                <Text className=' ml-2 text-white font-semibold'>Về Giữa</Text>
             </TouchableOpacity>
             <BottomSheet
                 index={1}
